@@ -12,7 +12,7 @@ Q=@
 MAKEFLAGS += -s
 endif
 
-SRCS := $(shell egrep '^.*\.v$$' _CoqProject | grep -v '^#')
+SRCS := $(shell egrep '^.*\.v$$' _CoqProject | grep -v '^\#')
 AUXS := $(join $(dir $(SRCS)), $(addprefix ., $(notdir $(SRCS:.v=.aux))))
 
 PROG ?= church
